@@ -1,0 +1,610 @@
+
+\documentclass[a4paper,12pt]{article}
+\author{}
+\date{}
+\usepackage[papersize={216mm,330mm},tmargin=20mm,bmargin=20mm,lmargin=20mm,rmargin=20mm]{geometry}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb} %,mathabx}%\for eqref
+\usepackage{lscape}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{fancyhdr}
+\usepackage{tasks}
+\usepackage{float}
+\usepackage{multicol}
+\usepackage{color}
+\usepackage{ragged2e} % justifying
+\usepackage{colortbl}
+\usepackage{cancel}
+\usepackage{stackengine}
+\usepackage{mathtools}
+\usepackage{tikz}   %create images
+\usepackage{tkz-fct}    %create graphics
+
+%====================================================
+%============= INFORMACAO DE ENTRADA=================
+%====================================================
+
+\def\nomedoaluno{José Manoel Freitas da Silva}
+\def\matricula{40028922}
+
+%IMD1002 - Análise Combinatória
+%IMD0024 - Cálculo 1
+%IMD0034 - Vetores e Geometria Analítica
+\def\coddisciplina{IMD0034}
+\def\nomedisciplina{Vetores e Geometria Analítica}
+\def\codturma{VGA20251T2}
+\def\codatividade{U1\_VGATRAB10}
+
+%====================================================
+%====================== FIM =========================
+%====================================================
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{Aluno: \nomedoaluno\\ Matrícula: \matricula}
+\chead{\thepage}
+\rhead{Instituto Metrópole Digital - UFRN \\
+Turma \codturma}
+\lfoot{\nomedisciplina}
+\cfoot{Atividade \codatividade}
+\rfoot{Prof. Samyr Jácome}
+
+\title{
+\vspace{-2cm}
+\Large \textbf{Universidade Federal do Rio Grande do Norte}\\ 
+Instituto Metrópole Digital \\ 
+\coddisciplina $\;$ - \nomedisciplina \\ 
+TURMA \codturma \\
+\vspace{5mm} \Large\textbf{ATIVIDADE \codatividade} \\
+\normalsize Natal-RN, \today\\
+\vspace{0.7cm} \large \textit{Prof. Samyr Jácome}\\
+
+\justifying
+\vspace{0.5cm} \hspace{-0.82cm}
+\begin{minipage}{.6\linewidth}
+    \large \textbf{Aluno:} \nomedoaluno
+\end{minipage}
+\begin{minipage}{.4\linewidth}
+    \begin{flushright}
+        \large \textbf{Matrícula:} \matricula
+    \end{flushright}
+\end{minipage}
+}
+
+% Tirar a identação do paragrafo no texto
+\def\tirarident{\setlength{\parindent}{0cm}} % padrão 15pt.
+
+\setlength{\marginparwidth}{2cm}
+
+%---------------------------------------------------------------
+%---------------COMANDO PARA SETA DE ESCALONAMENTO--------------
+%---------------------------------------------------------------
+
+\newcommand{\seta}[3][-0.05cm]{%
+  \stackon[#1]{
+    $\xrightarrow{\mathmakebox[\setawidth]{}}$}{
+    \scriptsize{$#2 \,\leftarrow\, #3$}
+    }
+}
+
+\newcommand{\troca}[3][-0.05cm]{%
+  \stackon[#1]{
+    $\xrightarrow{\mathmakebox[\setawidth]{}}$}{
+    \scriptsize{$#2 \,\leftrightarrow\, #3$}
+    }
+}
+
+\newlength{\setawidth}% row operation width
+\AtBeginDocument{\setlength{\setawidth}{2.0cm}}
+
+%---------------------------------------------------------------
+%--------------------------FIM----------------------------------
+%---------------------------------------------------------------
+
+\begin{document}
+\maketitle
+
+\vspace{-2cm}
+\section*{Exercícios}
+
+\tirarident
+
+\textbf{Questão 5 item a, pág. 36:}\\
+
+
+Sejam as matrizes
+\[
+A = \begin{bmatrix}
+3 & 0 \\
+-1 & 2 \\
+1 & 1 
+\end{bmatrix}
+\quad \text{e} \quad
+B = \begin{bmatrix}
+4 & -1 \\
+0 & 2
+\end{bmatrix}.
+\]
+Como \(A\) é de ordem \(3 \times 2\) e \(B\) de ordem \(2 \times 2\), o produto
+\[
+C = A \times B
+\]
+
+é uma matriz da ordem \(3 \times 2\)\\
+
+Desse modo, temos que: 
+
+\[
+\begin{aligned}
+C_{11} &= 3 \cdot 4 + 0 \cdot 0 = 12,\\[4mm]
+C_{12} &= 3 \cdot (-1) + 0 \cdot 2 = -3,\\[4mm]
+C_{21} &= (-1) \cdot 4 + 2 \cdot 0 = -4,\\[4mm]
+C_{22} &= (-1) \cdot (-1) + 2 \cdot 2 = 1 + 4 = 5,\\[4mm]
+C_{31} &= 1 \cdot 4 + 1 \cdot 0 = 4,\\[4mm]
+C_{32} &= 1 \cdot (-1) + 1 \cdot 2 = -1 + 2 = 1.
+\end{aligned}
+\]
+
+Portanto, a matriz \(C\) é
+\[
+C = \begin{bmatrix}
+12 & -3 \\
+-4 & 5 \\
+4 & 1
+\end{bmatrix}.
+\]
+
+%---------------------------------------------------------------
+%---------------------------------------------------------------
+
+\textbf{Questão 5 item c, pág. 36:}\\
+
+Sejam as matrizes
+\[
+E = \begin{bmatrix}
+6 & 1 & 3 \\
+-1 & 1 & 2 \\
+4 & 1 & 2
+\end{bmatrix}
+\quad \text{e} \quad
+D = \begin{bmatrix}
+1 & 5 & 2 \\
+-1 & 0 & 1 \\
+3 & 2 & 4
+\end{bmatrix}.
+\]
+\\
+Calcula-se o produto \((3E)D\). Primeiro, considere a multiplicação escalar:
+\[
+3E = \begin{bmatrix}
+18 & 3 & 9 \\
+-3 & 3 & 6 \\
+12 & 3 & 6
+\end{bmatrix}.
+\]
+Em seguida, temos que o produto \((3E)D\) é uma matriz da ordem \(3 \times 3\)\\
+
+\[
+\begin{aligned}
+X_{11} &= 18\cdot 1 + 3\cdot (-1) + 9\cdot 3 = 18 - 3 + 27 = 42,\\[4mm]
+X_{12} &= 18\cdot 5 + 3\cdot 0 + 9\cdot 2 = 90 + 0 + 18 = 108,\\[4mm]
+X_{13} &= 18\cdot 2 + 3\cdot 1 + 9\cdot 4 = 36 + 3 + 36 = 75,\\[8mm]
+\]
+\[
+X_{21} &= (-3)\cdot 1 + 3\cdot (-1) + 6\cdot 3 = -3 - 3 + 18 = 12,\\[4mm]
+X_{22} &= (-3)\cdot 5 + 3\cdot 0 + 6\cdot 2 = -15 + 0 + 12 = -3,\\[4mm]
+X_{23} &= (-3)\cdot 2 + 3\cdot 1 + 6\cdot 4 = -6 + 3 + 24 = 21,\\[8mm]
+\]
+\[
+X_{31} &= 12\cdot 1 + 3\cdot (-1) + 6\cdot 3 = 12 - 3 + 18 = 27,\\[4mm]
+X_{32} &= 12\cdot 5 + 3\cdot 0 + 6\cdot 2 = 60 + 0 + 12 = 72,\\[4mm]
+X_{33} &= 12\cdot 2 + 3\cdot 1 + 6\cdot 4 = 24 + 3 + 24 = 51.
+\end{aligned}
+\]
+
+Assim, a matriz resultado é
+
+\[
+(3E)D = \begin{bmatrix}
+42 & 108 & 75 \\
+12 & -3  & 21 \\
+27 & 72  & 51
+\end{bmatrix}.
+\]
+
+%---------------------------------------------------------------
+%---------------------------------------------------------------
+
+\textbf{Questão 5 item d, pág. 36:}\\
+
+Conforme calculado no item 5.a, temos
+\[
+AB = \begin{bmatrix}
+12 & -3 \\
+-4 & 5 \\
+4 & 1
+\end{bmatrix}.
+\]
+
+Seja
+\[
+C = \begin{bmatrix}
+1 & 4 & 2 \\
+3 & 1 & 5
+\end{bmatrix}.
+\]
+Como \(AB\) é uma matriz de ordem \(3 \times 2\) e \(C\) de ordem \(2 \times 3\), o produto resulta em uma matriz \(3 \times 3\).
+
+\[
+\begin{aligned}
+X_{11} &= 12\cdot 1 + (-3)\cdot 3 = 12 - 9 = 3,\\[4mm]
+X_{12} &= 12\cdot 4 + (-3)\cdot 1 = 48 - 3 = 45,\\[4mm]
+X_{13} &= 12\cdot 2 + (-3)\cdot 5 = 24 - 15 = 9,\\[8mm]
+X_{21} &= (-4)\cdot 1 + 5\cdot 3 = -4 + 15 = 11,\\[4mm]
+X_{22} &= (-4)\cdot 4 + 5\cdot 1 = -16 + 5 = -11,\\[4mm]
+X_{23} &= (-4)\cdot 2 + 5\cdot 5 = -8 + 25 = 17,\\[8mm]
+X_{31} &= 4\cdot 1 + 1\cdot 3 = 4 + 3 = 7,\\[4mm]
+X_{32} &= 4\cdot 4 + 1\cdot 1 = 16 + 1 = 17,\\[4mm]
+X_{33} &= 4\cdot 2 + 1\cdot 5 = 8 + 5 = 13.
+\end{aligned}
+\]
+
+Portanto, o produto \((AB)D\) é
+\[
+(AB)D = \begin{bmatrix}
+3 & 45 & 9 \\
+11 & -11 & 17 \\
+7 & 17 & 13
+\end{bmatrix}.
+\]
+
+%---------------------------------------------------------------
+%---------------------------------------------------------------
+
+\textbf{Questão 7, pág. 36:}\\
+
+Sejam as matrizes
+\[
+A = \begin{bmatrix}
+3 & -2 & 7 \\
+6 & 5 & 4 \\
+0 & 4 & 9
+\end{bmatrix}
+\quad \text{e} \quad
+B = \begin{bmatrix}
+6 & -2 & 4 \\
+0 & 1 & 3 \\
+7 & 7 & 5
+\end{bmatrix}.
+\]
+\\
+Considere as questões a seguir:\\
+
+\textbf{Questão 7 item a, pág. 36:}\\
+
+Dada as matrizes anteriores, podemos definir a primeira linha de \(AB\) como: 
+
+\[
+\begin{aligned}
+X_{11} &= 18 + 49 = 67,\\[4mm]
+X_{12} &= -6 -2 + 49 = 41,\\[4mm]
+X_{13} &= 12 -6 + 35 = 41,\\[4mm]
+\end{aligned}
+\]
+
+Portanto, pode ser definido como:
+\[
+\begin{bmatrix}
+67 & 41 & 41
+\end{bmatrix}.
+\]
+
+%---------------------------------------------------------------
+%---------------------------------------------------------------
+
+\textbf{Questão 7 item b, pág. 36:}\\
+
+Dada as matrizes anteriores, podemos definir a terceira linha de \(AB\) como: 
+
+\[
+\begin{aligned}
+X_{11} &= 0 + 0 + 63 = 63,\\[4mm]
+X_{12} &= 4 + 63 = 67,\\[4mm]
+X_{13} &= 12 - 6 + 45 = 57,\\[4mm]
+\end{aligned}
+\]
+
+Portanto, pode ser definido como:
+\[
+\begin{bmatrix}
+63 & 67 & 57
+\end{bmatrix}.
+\]
+
+%---------------------------------------------------------------
+%---------------------------------------------------------------
+
+\textbf{Questão 7 item c, pág. 36:}\\
+
+Tome a segunda coluna de AB tal que:
+
+\[
+\begin{bmatrix}
+X_{12}\\
+X_{22}\\
+X_{32}
+\end{bmatrix}.
+\]
+
+Note que, dos itens \textbf{a} e \textbf{b}, temos que:
+
+\[
+X_{12} &= 41,\\[4mm]
+X_{31} &= 67\\[4mm]
+\]
+
+Dessa forma, podemos calcular:
+
+\[
+X={22} = -12 + 5 + 28 = 21
+\]
+
+Assim temos:
+\[
+\begin{bmatrix}
+41\\
+21\\
+67
+\end{bmatrix}.
+\]
+
+%---------------------------------------------------------------
+%---------------------------------------------------------------
+
+\textbf{Questão 10 item a, pág. 36:}\\
+
+Dadas as linhas e colunas calculadas nos itens \textbf{a, b e c} da \textbf{questão 7}, podemos definir a matriz \(AB\) como: 
+
+\[
+AB = \begin{bmatrix}
+67 & 41 & 41 \\
+X_{21} & 21  & X_{23} \\
+63 & 67  & 57
+\end{bmatrix}.
+\]
+
+Desse modo, resta apenas calcular os itens:
+
+\[
+\begin{aligned}
+X_{21} &= 36 + 0 + 28 = 64,\\[4mm]
+X_{23} &= 24 + 15 + 20 = 59\\[4mm]
+\end{bmatrix}.
+\]
+
+Desse modo, temos que:
+\[
+AB = \begin{bmatrix}
+67 & 41 & 41 \\
+64 & 21  & 59 \\
+63 & 67  & 57
+\end{bmatrix}.
+\]
+
+Agora, expressamos cada coluna de \( AB \) como uma combinação linear das colunas de \( A \):
+
+Primeira coluna:
+
+\[
+\begin{bmatrix} 67 \\ 64 \\ 63 \end{bmatrix} =
+6 \begin{bmatrix} 3 \\ 6 \\ 0 \end{bmatrix} +
+7 \begin{bmatrix} 7 \\ 4 \\ 9 \end{bmatrix}
+\]
+
+Segunda coluna:
+
+\[
+\begin{bmatrix} 41 \\ 21 \\ 67 \end{bmatrix} =
+(-2) \begin{bmatrix} 3 \\ 6 \\ 0 \end{bmatrix} +
+1 \begin{bmatrix} -2 \\ 5 \\ 4 \end{bmatrix} +
+7 \begin{bmatrix} 7 \\ 4 \\ 9 \end{bmatrix}
+\]
+
+Terceira coluna:
+
+\[
+\begin{bmatrix} 41 \\ 59 \\ 57 \end{bmatrix} =
+4 \begin{bmatrix} 3 \\ 6 \\ 0 \end{bmatrix} +
+3 \begin{bmatrix} -2 \\ 5 \\ 4 \end{bmatrix} +
+5 \begin{bmatrix} 7 \\ 4 \\ 9 \end{bmatrix}
+\]
+
+%---------------------------------------------------------------
+%---------------------------------------------------------------
+
+\textbf{Questão 10 item b, pág. 36:}\\
+
+O produto \( BA \) é dado por:
+
+\[
+BA = \begin{bmatrix}
+6 & -6 & 72 \\
+6 & 17 & 31 \\
+63 & 41 & 72
+\end{bmatrix}.
+\]
+
+Agora, expressamos cada coluna de \( BA \) como uma combinação linear das colunas de \( B \):
+
+Primeira coluna:
+
+\[
+\begin{bmatrix} 6 \\ 6 \\ 63 \end{bmatrix} =
+3 \begin{bmatrix} 6 \\ 0 \\ 7 \end{bmatrix} +
+6 \begin{bmatrix} -2 \\ 1 \\ 7 \end{bmatrix} +
+0 \begin{bmatrix} 4 \\ 3 \\ 5 \end{bmatrix}
+\]
+
+Segunda coluna:
+
+\[
+\begin{bmatrix} -6 \\ 17 \\ 41 \end{bmatrix} =
+(-2) \begin{bmatrix} 6 \\ 0 \\ 7 \end{bmatrix} +
+5 \begin{bmatrix} -2 \\ 1 \\ 7 \end{bmatrix} +
+4 \begin{bmatrix} 4 \\ 3 \\ 5 \end{bmatrix}
+\]
+
+Terceira coluna:
+
+\[
+\begin{bmatrix} 72 \\ 31 \\ 73 \end{bmatrix} =
+7 \begin{bmatrix} 6 \\ 0 \\ 7 \end{bmatrix} +
+4 \begin{bmatrix} -2 \\ 1 \\ 7 \end{bmatrix} +
+9 \begin{bmatrix} 4 \\ 3 \\ 5 \end{bmatrix}
+\]
+
+%---------------------------------------------------------------
+%---------------------------------------------------------------
+
+\textbf{Questão 11 item a, pág. 36:}\\
+
+\[
+\begin{aligned}
+2x_1 - 3x_2 + 5x_3 &= 7, \\
+9x_1 - x_2 + x_3 &= -1, \\
+x_1 + 5x_2 + 4x_3 &= 0.
+\end{aligned}
+\]
+
+Esse sistema pode ser representado na forma matricial como:
+
+\[
+\begin{bmatrix} 
+2 & -3 & 5 \\ 
+9 & -1 & 1 \\ 
+1 & 5 & 4 
+\end{bmatrix} 
+\begin{bmatrix} 
+x_1 \\ 
+x_2 \\ 
+x_3 
+\end{bmatrix} =
+\begin{bmatrix} 
+7 \\ 
+-1 \\ 
+0 
+\end{bmatrix}.
+\]
+
+%---------------------------------------------------------------
+%---------------------------------------------------------------
+
+\textbf{Questão 11 item b, pág. 36:}\\
+
+Consideremos o sistema de equações lineares:
+
+\[
+\begin{aligned}
+4x_1 - 3x_3 + x_4 &= 1, \\
+5x_1 + x_2 - 8x_4 &= 3, \\
+2x_1 - 5x_2 + 9x_3 - x_4 &= 0, \\
+3x_2 - x_3 + 7x_4 &= 2
+\end{aligned}
+\]
+
+Esse sistema pode ser representado na forma matricial como:
+
+\[
+\begin{bmatrix} 
+4 & 0 & -3 & 1 \\ 
+5 & 1 & 0 & -8 \\ 
+2 & -5 & 9 & -1 \\ 
+0 & 3 & -1 & 7 
+\end{bmatrix} 
+\begin{bmatrix} 
+x_1 \\ 
+x_2 \\ 
+x_3 \\ 
+x_4
+\end{bmatrix} =
+\begin{bmatrix} 
+1 \\ 
+3 \\ 
+0 \\ 
+2
+\end{bmatrix}.
+\]
+
+%---------------------------------------------------------------
+%---------------------------------------------------------------
+
+\textbf{Questão 13 item a, pág. 36:}\\
+
+Consideremos a seguinte operação matricial:
+
+\[
+\begin{bmatrix} 
+5 & 6 & -7 \\ 
+-1 & -2 & 3 \\ 
+0 & 4 & -1 
+\end{bmatrix} 
+\begin{bmatrix} 
+x_1 \\ 
+x_2 \\ 
+x_3
+\end{bmatrix} =
+\begin{bmatrix} 
+2 \\ 
+0 \\ 
+3
+\end{bmatrix}.
+\]
+
+Expandindo essa equação matricial, obtemos o seguinte sistema de equações lineares:
+
+\[
+\begin{aligned}
+5x_1 + 6x_2 - 7x_3 &= 2, \\
+-x_1 - 2x_2 + 3x_3 &= 0, \\
+4x_2 - x_3 &= 3.
+\end{aligned}
+\]
+
+%---------------------------------------------------------------
+%---------------------------------------------------------------
+
+\textbf{Questão 13 item b, pág. 36:}\\
+
+Consideremos a seguinte operação matricial:
+
+\[
+\begin{bmatrix} 
+1 & 1 & 1 \\ 
+2 & 3 & 0 \\ 
+5 & -3 & -6 
+\end{bmatrix} 
+\begin{bmatrix} 
+x_1 \\ 
+x_2 \\ 
+x_3
+\end{bmatrix} =
+\begin{bmatrix} 
+2 \\ 
+2 \\ 
+-9
+\end{bmatrix}.
+\]
+
+Expandindo essa equação matricial, obtemos o seguinte sistema de equações lineares:
+
+\[
+\begin{aligned}
+x_1 + x_2 + x_3 &= 2, \\
+2x_1 + 3x_2 &= 2, \\
+5x_1 - 3x_2 - 6x_3 &= -9.
+\end{aligned}
+\]
+
+\end{document}

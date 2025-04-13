@@ -1,0 +1,258 @@
+  
+\documentclass[a4paper,12pt]{article}
+\author{}
+\date{}
+\usepackage[papersize={216mm,330mm},tmargin=20mm,bmargin=20mm,lmargin=20mm,rmargin=20mm]{geometry}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb} %,mathabx}%\for eqref
+\usepackage{lscape}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{fancyhdr}
+\usepackage{tasks}
+\usepackage{float}
+\usepackage{multicol}
+\usepackage{color}
+\usepackage{ragged2e} % justifying
+\usepackage{colortbl}
+\usepackage{cancel}
+\usepackage{stackengine}
+\usepackage{mathtools}
+\usepackage{tikz}   %create images
+\usepackage{tkz-fct}    %create graphics
+
+%====================================================
+%============= INFORMACAO DE ENTRADA=================
+%====================================================
+
+\def\nomedoaluno{José Manoel Freitas da Silva}
+\def\matricula{40028922}
+
+%IMD1002 - Análise Combinatória
+%IMD0024 - Cálculo 1
+%IMD0034 - Vetores e Geometria Analítica
+\def\coddisciplina{IMD0034}
+\def\nomedisciplina{Vetores e Geometria Analítica}
+\def\codturma{VGA20251T2}
+\def\codatividade{U1\_VGATRAB40}
+
+%====================================================
+%====================== FIM =========================
+%====================================================
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{Aluno: \nomedoaluno\\ Matrícula: \matricula}
+\chead{\thepage}
+\rhead{Instituto Metrópole Digital - UFRN \\
+Turma \codturma}
+\lfoot{\nomedisciplina}
+\cfoot{Atividade \codatividade}
+\rfoot{Prof. Samyr Jácome}
+
+\title{
+\vspace{-2cm}
+\Large \textbf{Universidade Federal do Rio Grande do Norte}\\ 
+Instituto Metrópole Digital \\ 
+\coddisciplina $\;$ - \nomedisciplina \\ 
+TURMA \codturma \\
+\vspace{5mm} \Large\textbf{ATIVIDADE \codatividade} \\
+\normalsize Natal-RN, \today\\
+\vspace{0.7cm} \large \textit{Prof. Samyr Jácome}\\
+
+\justifying
+\vspace{0.5cm} \hspace{-0.82cm}
+\begin{minipage}{.6\linewidth}
+    \large \textbf{Aluno:} \nomedoaluno
+\end{minipage}
+\begin{minipage}{.4\linewidth}
+    \begin{flushright}
+        \large \textbf{Matrícula:} \matricula
+    \end{flushright}
+\end{minipage}
+}
+
+% Tirar a identação do paragrafo no texto
+\def\tirarident{\setlength{\parindent}{0cm}} % padrão 15pt.
+
+\setlength{\marginparwidth}{2cm}
+
+%---------------------------------------------------------------
+%---------------COMANDO PARA SETA DE ESCALONAMENTO--------------
+%---------------------------------------------------------------
+
+\newcommand{\seta}[3][-0.05cm]{%
+  \stackon[#1]{
+    $\xrightarrow{\mathmakebox[\setawidth]{}}$}{
+    \scriptsize{$#2 \,\leftarrow\, #3$}
+    }
+}
+
+\newcommand{\troca}[3][-0.05cm]{%
+  \stackon[#1]{
+    $\xrightarrow{\mathmakebox[\setawidth]{}}$}{
+    \scriptsize{$#2 \,\leftrightarrow\, #3$}
+    }
+}
+
+\newlength{\setawidth}% row operation width
+\AtBeginDocument{\setlength{\setawidth}{2.0cm}}
+
+%---------------------------------------------------------------
+%--------------------------FIM----------------------------------
+%---------------------------------------------------------------
+
+\begin{document}
+\maketitle
+
+\vspace{-2cm}
+\section*{Exercícios}
+
+\tirarident
+
+\section*{Questão 3 - Página 117}
+
+Matriz original:
+\[
+A = \begin{bmatrix}
+-1 & 5 & 2 \\
+0 & 2 & -1 \\
+-3 & 1 & 1
+\end{bmatrix}
+\]
+
+Aplicamos a operação:
+\[
+\seta{C_2}{C_2 + 2C_3}
+\]
+
+Matriz resultante:
+\[
+\begin{bmatrix}
+-1 & 9 & 2 \\
+0 & 0 & -1 \\
+-3 & 3 & 1
+\end{bmatrix}
+\]
+
+Escolheremos a segunda linha para calcular o determinante por Laplace.
+
+Como $a_{2,1}$ e $a_{2,2}$ são zeros, os cofatores correspondentes são nulos. Calculamos apenas:
+
+\[
+\text{cofator } a_{2,3} = -1 \cdot (-1)^{2+3} \cdot 
+\begin{vmatrix}
+-1 & 9 \\
+-3 & 3
+\end{vmatrix}
+= -1 \cdot (-1) \cdot (-1 \cdot 3 - (-3) \cdot 9) = 24
+\]
+
+\[
+\Rightarrow \det(A) = 24
+\]
+
+
+\section*{Questão 5 - Página 117}
+
+Matriz original:
+\[
+A = \begin{bmatrix}
+3 & 0 & -1 \\
+1 & 1 & 1 \\
+0 & 4 & 2
+\end{bmatrix}
+\]
+
+Aplicamos a operação:
+\[
+\seta{C_1}{C_1 + 3C_3}
+\]
+
+Matriz resultante:
+\[
+\begin{bmatrix}
+0 & 0 & -1 \\
+4 & 1 & 1 \\
+6 & 4 & 2
+\end{bmatrix}
+\]
+
+Usamos a primeira linha para expansão de cofatores.
+
+Como $a_{1,1}$ e $a_{1,2}$ são zeros, calculamos apenas:
+
+\[
+\text{cofator } a_{1,3} = -1 \cdot (-1)^{1+3} \cdot 
+\begin{vmatrix}
+4 & 1 \\
+0 & 4
+\end{vmatrix}
+= -1 \cdot (4 \cdot 4 - 0) = -16
+\]
+
+\[
+\Rightarrow \det(A) = -16
+\]
+
+\section*{Questão 19 - Página 117}
+
+Matriz original:
+\[
+A = \begin{bmatrix}
+-1 & 5 & 2 \\
+0 & 2 & -1 \\
+-3 & 1 & 1
+\end{bmatrix}
+\]
+
+Do exercício 3, sabemos que $\det(A) = 24$.
+
+Pelo Teorema 2.3.6, a inversa é:
+\[
+A^{-1} = \frac{1}{\det(A)} \cdot \text{adj}(A) = \frac{1}{24} \cdot \text{adj}(A)
+\]
+
+\subsection*{Cálculo dos Cofatores}
+
+\begin{align*}
+C_{1,1} &= (+) \cdot \begin{vmatrix} 2 & -1 \\ 1 & 1 \end{vmatrix} = 3 &
+C_{1,2} &= (-) \cdot \begin{vmatrix} 0 & -1 \\ -3 & 1 \end{vmatrix} = 3 &
+C_{1,3} &= (+) \cdot \begin{vmatrix} 0 & 2 \\ -3 & 1 \end{vmatrix} = 6 \\
+C_{2,1} &= (-) \cdot \begin{vmatrix} 5 & 2 \\ 1 & 1 \end{vmatrix} = -3 &
+C_{2,2} &= (+) \cdot \begin{vmatrix} -1 & 2 \\ -3 & 1 \end{vmatrix} = 5 &
+C_{2,3} &= (-) \cdot \begin{vmatrix} -1 & 5 \\ -3 & 1 \end{vmatrix} = -14 \\
+C_{3,1} &= (+) \cdot \begin{vmatrix} 5 & 2 \\ 2 & -1 \end{vmatrix} = -9 &
+C_{3,2} &= (-) \cdot \begin{vmatrix} -1 & 2 \\ 0 & -1 \end{vmatrix} = -1 &
+C_{3,3} &= (+) \cdot \begin{vmatrix} -1 & 5 \\ 0 & 2 \end{vmatrix} = -2 \\
+\end{align*}
+
+\subsection*{Matriz Adjunta (Transposta da Matriz de Cofatores)}
+\[
+\text{adj}(A) = 
+\begin{bmatrix}
+3 & 3 & 6 \\
+-3 & 5 & -14 \\
+-9 & -1 & -2
+\end{bmatrix}
+\]
+
+\subsection*{Matriz Inversa}
+\[
+A^{-1} = \frac{1}{24}
+\begin{bmatrix}
+3 & 3 & 6 \\
+-3 & 5 & -14 \\
+-9 & -1 & -2
+\end{bmatrix}
+=
+\begin{bmatrix}
+\frac{1}{8} & \frac{1}{8} & \frac{1}{4} \\
+-\frac{1}{8} & \frac{5}{24} & -\frac{7}{12} \\
+-\frac{3}{8} & -\frac{1}{24} & -\frac{1}{12}
+\end{bmatrix}
+\]
+
+
+\end{document}

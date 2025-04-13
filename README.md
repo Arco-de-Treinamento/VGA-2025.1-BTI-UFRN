@@ -1,11 +1,7 @@
-<div align="center">
-  <img src = "https://github.com/Arco-de-Treinamento/.github/blob/main/profile/assets/Character_Selection_2.png" width="200px">
-</div>
-
 <h1 align = "center">
-  Shishin no Ken
+  Vetores e Geometria Analítica
   <p align="center">
-    <img src="https://img.shields.io/github/last-commit/Arco-de-Treinamento/Shishin-no-Ken/main">
+    <img src="https://img.shields.io/github/last-commit/Arco-de-Treinamento/VGA-2025.1-BTI-UFRN">
     <img src="https://img.shields.io/github/license/Arco-de-Treinamento/Shishin-no-Ken">
   </p>
 </h1>
@@ -20,28 +16,18 @@
 <hr>
 
 <h2 id = "sobre-este-projeto">🕹️ Sobre este projeto</h2>
-Este é apenas mais um template seguindo a temática de Dragon Ball. Seu nome remete a técnica "Shishin no Jen", do Tenshinhan, que cria clones de si.
+Este repositório está destinado ao armazenamento de resoluções dos exercícios e anotações executadas durante a matéria de Vetores e Geometria Analitica, ministrado dentro do Bacharelado em Tecnologia da Informação e ofertado pela UFRN - IMD.
 
 <hr>
 
-<h2 id="consideracoes">🎮 Considerações</h2>
-Eu sou bom com trocadilhos.
-
-<hr>
-
-<h2 id="leitura">🏴‍☠️ Leitura e links recomendados</h2>
-
-* [Shishin no Ken](https://dragonball.fandom.com/wiki/Multi-Form)
-
-<hr>
 
 <h2 id="licenca">📝 Licença</h2>
 
-- Este projeto está sob a licença [MIT](https://github.com/Arco-de-Treinamento/Shishin-no-Ken/blob/main/LICENSE).
+- Este projeto está sob a licença [MIT](hhttps://github.com/Arco-de-Treinamento/Shishin-no-Ken/blob/main/LICENSE).
 
 <hr>
 
 <div align = "center">
-  
+
   👋🏾 Feito por [JosManoel](https://github.com/JosManoel) com 🕹️ , 🎧 e 💻.
 </div> 

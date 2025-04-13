@@ -1,0 +1,420 @@
+  
+\documentclass[a4paper,12pt]{article}
+\author{}
+\date{}
+\usepackage[papersize={216mm,330mm},tmargin=20mm,bmargin=20mm,lmargin=20mm,rmargin=20mm]{geometry}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb} %,mathabx}%\for eqref
+\usepackage{lscape}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{fancyhdr}
+\usepackage{tasks}
+\usepackage{float}
+\usepackage{multicol}
+\usepackage{color}
+\usepackage{ragged2e} % justifying
+\usepackage{colortbl}
+\usepackage{cancel}
+\usepackage{stackengine}
+\usepackage{mathtools}
+\usepackage{tikz}   %create images
+\usepackage{tkz-fct}    %create graphics
+
+%====================================================
+%============= INFORMACAO DE ENTRADA=================
+%====================================================
+
+\def\nomedoaluno{José Manoel Freitas da Silva}
+\def\matricula{40028922}
+
+%IMD1002 - Análise Combinatória
+%IMD0024 - Cálculo 1
+%IMD0034 - Vetores e Geometria Analítica
+\def\coddisciplina{IMD0034}
+\def\nomedisciplina{Vetores e Geometria Analítica}
+\def\codturma{VGA20251T2}
+\def\codatividade{U1\_VGATRAB20}
+
+%====================================================
+%====================== FIM =========================
+%====================================================
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{Aluno: \nomedoaluno\\ Matrícula: \matricula}
+\chead{\thepage}
+\rhead{Instituto Metrópole Digital - UFRN \\
+Turma \codturma}
+\lfoot{\nomedisciplina}
+\cfoot{Atividade \codatividade}
+\rfoot{Prof. Samyr Jácome}
+
+\title{
+\vspace{-2cm}
+\Large \textbf{Universidade Federal do Rio Grande do Norte}\\ 
+Instituto Metrópole Digital \\ 
+\coddisciplina $\;$ - \nomedisciplina \\ 
+TURMA \codturma \\
+\vspace{5mm} \Large\textbf{ATIVIDADE \codatividade} \\
+\normalsize Natal-RN, \today\\
+\vspace{0.7cm} \large \textit{Prof. Samyr Jácome}\\
+
+\justifying
+\vspace{0.5cm} \hspace{-0.82cm}
+\begin{minipage}{.6\linewidth}
+    \large \textbf{Aluno:} \nomedoaluno
+\end{minipage}
+\begin{minipage}{.4\linewidth}
+    \begin{flushright}
+        \large \textbf{Matrícula:} \matricula
+    \end{flushright}
+\end{minipage}
+}
+
+% Tirar a identação do paragrafo no texto
+\def\tirarident{\setlength{\parindent}{0cm}} % padrão 15pt.
+
+\setlength{\marginparwidth}{2cm}
+
+%---------------------------------------------------------------
+%---------------COMANDO PARA SETA DE ESCALONAMENTO--------------
+%---------------------------------------------------------------
+
+\newcommand{\seta}[3][-0.05cm]{%
+  \stackon[#1]{
+    $\xrightarrow{\mathmakebox[\setawidth]{}}$}{
+    \scriptsize{$#2 \,\leftarrow\, #3$}
+    }
+}
+
+\newcommand{\troca}[3][-0.05cm]{%
+  \stackon[#1]{
+    $\xrightarrow{\mathmakebox[\setawidth]{}}$}{
+    \scriptsize{$#2 \,\leftrightarrow\, #3$}
+    }
+}
+
+\newlength{\setawidth}% row operation width
+\AtBeginDocument{\setlength{\setawidth}{2.0cm}}
+
+%---------------------------------------------------------------
+%--------------------------FIM----------------------------------
+%---------------------------------------------------------------
+
+\begin{document}
+\maketitle
+
+\vspace{-2cm}
+\section*{Exercícios}
+
+\tirarident
+
+\textbf{Questão 7, pág. 23:}\\
+
+Dado o sistema de equações lineares:
+\[
+\begin{cases}
+x - y + 2z - w = -1 \\
+2x + y - 2z - 2w = -2 \\
+- x + 2y - 4z + w = 1 \\
+3x - 3w = -3
+\end{cases}
+\]
+
+Podemos representá-lo na forma matricial aumentada:
+\[
+A =
+\begin{bmatrix}
+1 & -1 & 2 & -1 & -1 \\
+2 & 1 & -2 & -2 & -2 \\
+-1 & 2 & -4 & 1 & 1 \\
+3 & 0 & 0 & -3 & -3
+\end{bmatrix}
+\]
+
+Aplicamos as seguintes operações:
+
+1. \( A_2 \leftarrow A_2 - 2A_1 \)
+\[
+\begin{bmatrix}
+1 & -1 & 2 & -1 & -1 \\
+0 & 3 & -6 & 0 & 0 \\
+-1 & 2 & -4 & 1 & 1 \\
+3 & 0 & 0 & -3 & -3
+\end{bmatrix}
+\]
+
+2. \( A_3 \leftarrow A_3 + A_1 \)
+\[
+\begin{bmatrix}
+1 & -1 & 2 & -1 & -1 \\
+0 & 3 & -6 & 0 & 0 \\
+0 & 1 & -2 & 0 & 0 \\
+3 & 0 & 0 & -3 & -3
+\end{bmatrix}
+\]
+
+3. \( A_4 \leftarrow A_4 - 3A_1 \)
+\[
+\begin{bmatrix}
+1 & -1 & 2 & -1 & -1 \\
+0 & 3 & -6 & 0 & 0 \\
+0 & 1 & -2 & 0 & 0 \\
+0 & 3 & -6 & 0 & 0
+\end{bmatrix}
+\]
+
+4. Permutamos \( A_2 \) com \( A_3 \):
+\[
+\begin{bmatrix}
+1 & -1 & 2 & -1 & -1 \\
+0 & 1 & -2 & 0 & 0 \\
+0 & 3 & -6 & 0 & 0 \\
+0 & 3 & 6 & 0 & 0
+\end{bmatrix}
+\]
+
+5. \( A_1 \leftarrow A_1 + A_2 \)
+\[
+\begin{bmatrix}
+1 & 0 & 0 & -1 & -1 \\
+0 & 1 & -2 & 0 & 0 \\
+0 & 3 & -6 & 0 & 0 \\
+0 & 3 & -6 & 0 & 0
+\end{bmatrix}
+\]
+
+6. \( A_3 \leftarrow A_3 - 3A_2 \) e \( A_4 \leftarrow A_4 - 3A_2 \)
+\[
+\begin{bmatrix}
+1 & 0 & 0 & -1 & -1 \\
+0 & 1 & -2 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0
+\end{bmatrix}
+\]
+
+Assim, obtemos as equações reduzidas:
+\[
+\begin{cases}
+x - w = -1 \Rightarrow x = -1 + w \\
+y - 2z = 0 \Rightarrow y = 2z
+\end{cases}
+\]
+
+
+%---------------------------------------------------------------
+%---------------------------------------------------------------
+
+\textbf{Questão 9, pág. 23:}\\
+
+Dado o sistema de equações:
+\[
+\begin{cases}
+x_1 + x_2 + 2x_3 = 8 \\
+- x_1 - 2x_2 + 3x_3 = 1 \\
+-3x_1 - 7x_2 + 4x_3 = 10
+\end{cases}
+\]
+
+Representamos na forma matricial aumentada:
+\[
+A =
+\begin{bmatrix}
+1 & 1 & 2 & 8 \\
+-1 & -2 & 3 & 1 \\
+-3 & -7 & 4 & 10
+\end{bmatrix}
+\]
+
+Aplicamos as seguintes transformações:
+
+1. \( f_1: A_2 \leftarrow (A_2 - A_1) \cdot (-1) \)
+\[
+\begin{bmatrix}
+1 & 1 & 2 & 8 \\
+0 & 1 & -5 & -9 \\
+-3 & -7 & 4 & 10
+\end{bmatrix}
+\]
+
+2. \( f_2: A_3 \leftarrow A_3 + 3A_1 \)
+\[
+\begin{bmatrix}
+1 & 1 & 2 & 8 \\
+0 & 1 & -5 & -9 \\
+0 & -4 & 10 & 34
+\end{bmatrix}
+\]
+
+3. \( f_3: A_3 \leftarrow \frac{A_3 -(- 4A_2)}{-10} \)
+\[
+\begin{bmatrix}
+1 & 1 & 2 & 8 \\
+0 & 1 & -5 & -9 \\
+0 & 0 & 1 & \frac{1}{5}
+\end{bmatrix}
+\]
+
+O sistema escalonado resultante é:
+\[
+\begin{cases}
+x_1 + x_2 + 2x_3 = 8 \\
+x_2 - 5x_3 = -9 \\
+x_3 = \frac{1}{5}
+\end{cases}
+\]
+
+
+%---------------------------------------------------------------
+%---------------------------------------------------------------
+
+\textbf{Questão 19, pág. 23:}\\
+
+Dado o sistema de equações:
+\[
+\begin{cases}
+3x_1 + x_2 + x_3 + x_4 = 0 \\
+5x_1 - x_2 + x_3 - x_4 = 0
+\end{cases}
+\]
+
+Representamos na forma matricial aumentada:
+\[
+A =
+\begin{bmatrix}
+3 & 1 & 1 & 1 & 0 \\
+5 & -1 & 1 & -1 & 0
+\end{bmatrix}
+\]
+
+Aplicamos as seguintes transformações:
+
+1. \( f_1: A_1 \leftarrow \frac{A_1}{3} \)
+\[
+\begin{bmatrix}
+1 & \frac{1}{3} & \frac{1}{3} & \frac{1}{3} & 0 \\
+5 & -1 & 1 & -1 & 0
+\end{bmatrix}
+\]
+
+2. \( f_2: A_2 \leftarrow A_2 - 5A_1 \)
+\[
+\begin{bmatrix}
+1 & \frac{1}{3} & \frac{1}{3} & \frac{1}{3} & 0 \\
+0 & -\frac{8}{3} & -\frac{2}{3} & -\frac{8}{3} & 0
+\end{bmatrix}
+\]
+
+3. \( f_3: A_2 \leftarrow \frac{A_2}{-8/3} \)
+\[
+\begin{bmatrix}
+1 & \frac{1}{3} & \frac{1}{3} & \frac{1}{3} & 0 \\
+0 & 1 & \frac{1}{4} & 1 & 0
+\end{bmatrix}
+\]
+
+4. \( f_4: A_1 \leftarrow A_1 - \frac{1}{3}A_2 \)
+\[
+\begin{bmatrix}
+1 & 0 & \frac{1}{4} & 0 & 0 \\
+0 & 1 & \frac{1}{4} & 1 & 0
+\end{bmatrix}
+\]
+
+O sistema escalonado resultante é:
+\[
+\begin{cases}
+x_1 + \frac{x_3}{4} = 0 \\
+x_2 + \frac{x_3}{4} + x_4 = 0
+\end{cases}
+\]
+
+Isolando as variáveis, temos que:
+\[
+x_1 = -\frac{x_3}{4}, \quad x_2 = x_1 - x_4
+\]
+
+%---------------------------------------------------------------
+%---------------------------------------------------------------
+
+\textbf{Questão 32, pág. 24:}\\
+
+%Virou sudoku agora ??
+
+Seja a matriz inicial:
+
+\[
+A =
+\begin{bmatrix}
+2 & 1 & 3 \\
+0 & -2 & -29 \\
+3 & 4 & 5
+\end{bmatrix}
+\]
+
+1. \( f: A_1 \leftarrow 5A_1 \), \( A_3 \leftarrow 5A_3 \)
+
+\[
+\begin{bmatrix}
+10 & 5 & 15 \\
+0 & -2 & -29 \\
+15 & 20 & 25
+\end{bmatrix}
+\]
+
+2. \( f: A_3 \leftarrow \frac{A_3 - A_1}{5} \)
+
+\[
+\begin{bmatrix}
+10 & 5 & 15 \\
+0 & -2 & -29 \\
+1 & 3 & 2
+\end{bmatrix}
+\]
+
+3. Permutamos \( A_3 \) com \( A_1 \):
+
+\[
+\begin{bmatrix}
+1 & 3 & 2 \\
+0 & -2 & -29 \\
+10 & 5 & 15
+\end{bmatrix}
+\]
+
+4. \( f: A_3 \leftarrow \frac{A_3 * A_2 * A_1}{-30} \)
+
+\[
+\begin{bmatrix}
+1 & 3 & 2 \\
+0 & -2 & -29 \\
+0 & 1 & 29
+\end{bmatrix}
+\]
+
+5. Permutamos \( A_3 \) com \( A_2 \):
+
+\[
+\begin{bmatrix}
+1 & 3 & 2 \\
+0 & 1 & 29 \\
+0 & -2 & -29
+\end{bmatrix}
+\]
+
+O sistema resultante é:
+
+\[
+\begin{cases}
+x + 3y = 2 \\
+y = 29 \\
+-2y = -29 \Rightarrow 2y = 29
+\end{cases}
+\]
+
+Observe que \( y = 29 \) e \( 2y = 29 \), o que é um absurdo. Portanto, o resultado é inconclusivo.
+
+\end{document}
